@@ -1,4 +1,4 @@
-# Kidney Tumor Detection Using Deep Feature Fusion and Machine Learning
+## Fuzzy-Enhanced Kidney Tumor Detection Using Twin Transfer Learning and a Weighted Ensemble Classifier.
 
 An academic research prototype for classifying kidney CT images as **Normal** or **Tumor** using image enhancement, pretrained deep learning feature extractors, and a weighted machine learning ensemble.
 
@@ -152,6 +152,5 @@ streamlit run app.py
 ## Author
 
 **Niharika Kadam**
-
 
 GitHub: https://github.com/NIHARIKAKADAM
