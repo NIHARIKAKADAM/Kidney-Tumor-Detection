@@ -29,18 +29,52 @@ The system combines:
 - Matplotlib
 - Joblib
 
+
 ## Model Architecture
 
-1. Upload a kidney CT image.
-2. Apply fuzzy-style image enhancement.
-3. Extract 1,024 features using pretrained DenseNet121.
-4. Extract 2,048 features using pretrained ResNet101.
-5. Concatenate both feature vectors into 3,072 features.
-6. Apply trained SVM and Random Forest classifiers.
-7. Combine their scores using a weighted ensemble.
-8. Display the predicted class in the Streamlit dashboard.
+The proposed system follows a twin transfer-learning architecture with fuzzy image enhancement and weighted ensemble classification.
 
-The feature extractors use pretrained ImageNet weights. The current implementation does not fine-tune these neural networks on the kidney CT dataset.
+```mermaid
+flowchart TD
+    A["Input Kidney CT Image"]
+    B["Fuzzy Logic-Based Image Enhancement"]
+
+    A --> B
+
+    B --> C["Pretrained DenseNet121"]
+    B --> D["Pretrained ResNet101"]
+
+    C --> E["Dense Feature Vector<br/>1024 Features"]
+    D --> F["ResNet Feature Vector<br/>2048 Features"]
+
+    E --> G["Twin Deep Feature Fusion<br/>3072 Features"]
+    F --> G
+
+    G --> H["Support Vector Machine (SVM)"]
+    G --> I["Random Forest Classifier"]
+
+    H --> J["Weighted Ensemble Classifier"]
+    I --> J
+
+    J --> K["Final Classification"]
+    K --> L["Normal"]
+    K --> M["Tumor"]
+
+    style A fill:#E8F0FE,stroke:#4285F4,color:#000
+    style B fill:#E8F0FE,stroke:#4285F4,color:#000
+    style G fill:#D9EAF7,stroke:#2874A6,color:#000
+    style J fill:#D9EAD3,stroke:#38761D,color:#000
+    style K fill:#FFF2CC,stroke:#BF9000,color:#000
+```
+
+### Ensemble Configuration
+
+- SVM weight: 0.75
+- Random Forest weight: 0.25
+- Classification threshold: 0.30
+- Feature dimensions: 3,072
+- Final output classes: Normal and Tumor
+
 
 ## Dataset
 
