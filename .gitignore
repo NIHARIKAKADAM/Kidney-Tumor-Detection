@@ -1,0 +1,37 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+dataset/
+models/
+.env
+features/
+splits.json
+# Extracted feature arrays
+features_grouped/
+features_clean/
+features_optimized/
+
+# Trained models and experimental checkpoints
+models_grouped/
+models_clean/
+models_optimized/
+*.joblib
+*.npy
+
+# Local datasets and generated artifacts
+data/
+datasets/
+evaluation_charts/
+.ipynb_checkpoints/
+*.log
+
+# Development backups and unfinished experiments
+app_backup.py
+app_before_grouped_model.py
+app_step56_backup.py
+optimize_svm.py
+splits_clean_backup.json
+
+# Outdated evaluation script
+evaluation_charts.py

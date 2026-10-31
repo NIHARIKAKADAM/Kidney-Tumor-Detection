@@ -1,0 +1,26 @@
+Kidney Tumor Detection - Similarity-Grouped Test Evaluation
+===========================================================
+Test images: 1110
+Classification threshold: 0.30
+SVM weight: 0.75
+RF weight: 0.25
+Test accuracy: 86.0360%
+
+Confusion matrix:
+[[707  56]
+ [ 99 248]]
+
+              precision    recall  f1-score   support
+
+      Normal     0.8772    0.9266    0.9012       763
+       Tumor     0.8158    0.7147    0.7619       347
+
+    accuracy                         0.8604      1110
+   macro avg     0.8465    0.8207    0.8316      1110
+weighted avg     0.8580    0.8604    0.8577      1110
+
+LIMITATIONS:
+Predictions were generated from the saved trained models.
+The split groups images using perceptual-hash similarity.
+Patient-independent evaluation has NOT been established.
+This research prototype is NOT suitable for clinical diagnosis.
