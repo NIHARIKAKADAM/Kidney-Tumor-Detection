@@ -186,5 +186,3 @@ streamlit run app.py
 ## Author
 
 **Niharika Kadam**
-
-GitHub: https://github.com/NIHARIKAKADAM
